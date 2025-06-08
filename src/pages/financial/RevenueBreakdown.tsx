@@ -97,7 +97,7 @@ export const RevenueBreakdown: React.FC = () => {
                 fill="#8884d8"
                 dataKey="value"
               >
-                {revenueByModality.map((entry, index) => (
+                {revenueByModality.map((_, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
@@ -135,7 +135,7 @@ export const RevenueBreakdown: React.FC = () => {
                 fill="#8884d8"
                 dataKey="value"
               >
-                {revenueByPayerType.map((entry, index) => (
+                {revenueByPayerType.map((_, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[(index + 2) % COLORS.length]} />
                 ))}
               </Pie>

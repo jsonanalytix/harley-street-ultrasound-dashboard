@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { KPICard } from '@/components/ui/kpi-card';
 import { ChartContainer } from '@/components/ui/chart-container';
@@ -25,7 +25,7 @@ import {
   profitabilityKPIs,
   costBreakdownByCategory,
 } from '@/mockData/profitability';
-import { DollarSign, TrendingUp, TrendingDown, Activity } from 'lucide-react';
+import { DollarSign, TrendingUp, TrendingDown } from 'lucide-react';
 
 const COLORS = ['#005EB8', '#38B6FF', '#F97316', '#14B8A6', '#8B5CF6', '#EC4899', '#10B981'];
 
@@ -83,8 +83,6 @@ const CustomTreemapContent = (props: any) => {
 };
 
 export const Profitability: React.FC = () => {
-  const [viewMode, setViewMode] = useState<'procedure' | 'category'>('procedure');
-  
   const procedures = calculateProcedureProfitability();
   const categories = calculateCategoryProfitability();
   const kpis = profitabilityKPIs();

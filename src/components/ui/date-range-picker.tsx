@@ -8,7 +8,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import { useDateRange, DateRange } from '@/contexts/DateRangeContext';
+import { useDateRange } from '@/contexts/DateRangeContext';
 import { cn } from '@/lib/utils';
 
 export const DateRangePicker: React.FC = () => {

@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import {
   Bar,
-  BarChart,
   Line,
   LineChart,
   ResponsiveContainer,
@@ -29,7 +28,7 @@ const COLORS = ['#005EB8', '#38B6FF', '#F97316', '#14B8A6', '#8B5CF6', '#EC4899'
 export const ProcedureTrends: React.FC = () => {
   const seasonalData = generateSeasonalData();
 
-  const getTrendIcon = (trend: string, percentage: number) => {
+  const getTrendIcon = (trend: string) => {
     if (trend === 'up') return <TrendingUp className="h-3 w-3 text-green-600" />;
     if (trend === 'down') return <TrendingUp className="h-3 w-3 text-red-600 rotate-180" />;
     return <div className="h-3 w-3" />;
@@ -134,7 +133,7 @@ export const ProcedureTrends: React.FC = () => {
                         variant="secondary"
                         className={`text-xs ${getTrendColor(procedure.trend)}`}
                       >
-                        {getTrendIcon(procedure.trend, procedure.trendPercentage)}
+                        {getTrendIcon(procedure.trend)}
                         <span className="ml-1">
                           {procedure.trendPercentage > 0 ? '+' : ''}{procedure.trendPercentage}%
                         </span>

@@ -48,7 +48,7 @@ export const ReferralSources: React.FC = () => {
     { month: 'Dec', 'Google Ads': 64900, 'Consultants': 68820, 'GP Practices': 58000, 'Insurers': 64340, 'Embassies': 44870 },
   ];
 
-  const getTrendIcon = (trend: string, percentage: number) => {
+  const getTrendIcon = (trend: string) => {
     if (trend === 'up') return <TrendingUp className="h-3 w-3 text-green-600" />;
     if (trend === 'down') return <TrendingUp className="h-3 w-3 text-red-600 rotate-180" />;
     return <div className="h-3 w-3" />;
@@ -143,12 +143,12 @@ export const ReferralSources: React.FC = () => {
                 cx="50%"
                 cy="50%"
                 labelLine={false}
-                label={({ name, percentage }) => `${percentage}%`}
+                label={({ percentage }) => `${percentage}%`}
                 outerRadius={80}
                 fill="#8884d8"
                 dataKey="value"
               >
-                {referralRevenueBySource.map((entry, index) => (
+                {referralRevenueBySource.map((_, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
@@ -232,7 +232,7 @@ export const ReferralSources: React.FC = () => {
                         variant="secondary"
                         className={`text-xs ${getTrendColor(source.trend)}`}
                       >
-                        {getTrendIcon(source.trend, source.trendPercentage)}
+                        {getTrendIcon(source.trend)}
                         <span className="ml-1">
                           {source.trendPercentage > 0 ? '+' : ''}{source.trendPercentage}%
                         </span>

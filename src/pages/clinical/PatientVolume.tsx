@@ -30,12 +30,11 @@ import {
   patientVolumeKPIs,
   clinicResources,
 } from '@/mockData/patientVolume';
-import { Users, TrendingUp, UserCheck, UserPlus, Activity, Building, Stethoscope } from 'lucide-react';
+import { Users, TrendingUp, UserPlus, Building } from 'lucide-react';
 
 const COLORS = ['#005EB8', '#38B6FF', '#F97316', '#14B8A6', '#8B5CF6', '#EC4899', '#10B981'];
 
 export const PatientVolume: React.FC = () => {
-  const [timeView, setTimeView] = useState<'daily' | 'weekly' | 'monthly'>('daily');
   const volumeData = generatePatientVolumeData();
   const tableData = generateDailyVolumeTable();
   const utilizationData = generateUtilizationData();

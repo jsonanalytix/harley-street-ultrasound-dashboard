@@ -167,14 +167,6 @@ export const generateRecentAppointments = () => {
   const appointments = [];
   const serviceCategories = ['Pregnancy Scans', 'Breast Ultrasound', 'Female Health', 'Male Health', 'Musculoskeletal', 'Paediatric'];
   const referralTypes = ['GP', 'Consultant', 'Self-Referral', 'A&E', 'Corporate'];
-  const clinicians = [
-    'Dr Shayan Ahmed', 'Dr Hussain Amin', 'Dr Trevor Gaunt',
-    'Dr Kate Hawtin', 'Dr Ayman Mahfouz', 'Dr Nikhil Patel',
-    'Dr Sophie Pattison', 'Dr Hela Sbano', 'Dr Ahmed Shah',
-    'Ms Heba Alkutbi', 'Dr Niels van Vucht', 'Dr Tahir Hussain',
-    'Dr Sanjay Karamsadkar', 'Dr Xin Kowa', 'Dr Husam Wassati',
-    'Mr Massimiliano Cariati', 'Miss Chloe Constantinou'
-  ];
   
   for (let i = 0; i < 50; i++) {
     const createdDate = subDays(new Date(), Math.floor(Math.random() * 30));
@@ -187,7 +179,14 @@ export const generateRecentAppointments = () => {
       patientId: `PAT-${Math.floor(Math.random() * 500)}`,
       modality: serviceCategories[Math.floor(Math.random() * serviceCategories.length)],
       referralType: referralTypes[Math.floor(Math.random() * referralTypes.length)],
-      clinician: clinicians[Math.floor(Math.random() * clinicians.length)],
+      clinician: [
+        'Dr Shayan Ahmed', 'Dr Hussain Amin', 'Dr Trevor Gaunt',
+        'Dr Kate Hawtin', 'Dr Ayman Mahfouz', 'Dr Nikhil Patel',
+        'Dr Sophie Pattison', 'Dr Hela Sbano', 'Dr Ahmed Shah',
+        'Ms Heba Alkutbi', 'Dr Niels van Vucht', 'Dr Tahir Hussain',
+        'Dr Sanjay Karamsadkar', 'Dr Xin Kowa', 'Dr Husam Wassati',
+        'Mr Massimiliano Cariati', 'Miss Chloe Constantinou'
+      ][Math.floor(Math.random() * 17)],
       createdDate: format(createdDate, 'MMM dd, yyyy HH:mm'),
       appointmentDate: format(appointmentDate, 'MMM dd, yyyy HH:mm'),
       waitTimeDays: Math.round(waitDays * 10) / 10,

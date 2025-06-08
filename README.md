@@ -1,181 +1,155 @@
-# Harley Street Ultrasound BI Portal
+# Harley Street Ultrasound Business Intelligence Portal
 
-A comprehensive business intelligence portal for Harley Street Ultrasound, built with React 18, TypeScript, and modern web technologies.
+A comprehensive Business Intelligence (BI) dashboard for Harley Street Ultrasound clinic, providing real-time insights into clinical operations, financial performance, marketing effectiveness, and patient experience.
 
-## Features
+## 🏥 Overview
 
-- **Authentication System**: Secure login with environment-based credentials
-- **Comprehensive Dashboard**: 5 main sections with 15+ detailed report pages
-- **Real-time Data Visualization**: Interactive charts and tables using Recharts
-- **Responsive Design**: Mobile-first approach with collapsible navigation
-- **Date Range Filtering**: Global date range picker affecting all reports
-- **Export Functionality**: PNG export for charts and CSV for tables
-- **Theme Support**: Light/dark mode toggle
-- **Accessibility**: WCAG AA compliant design
+This React-based dashboard integrates with Zoho CRM and other data sources to provide actionable insights for:
+- Clinical operations and patient flow
+- Financial performance and profitability analysis
+- Marketing campaign effectiveness
+- Patient experience metrics
+- Strategic planning and capacity forecasting
 
-## Tech Stack
+## 🚀 Features
 
-- **Frontend**: React 18, TypeScript, Vite
-- **Styling**: Tailwind CSS, shadcn/ui components
-- **State Management**: TanStack Query, React Context
-- **Routing**: React Router v6
+### Clinical & Operations
+- **Patient Volume Report**: Track daily/weekly/monthly scan volumes with new vs returning patient analysis
+- **Referral Sources**: Analyze referral patterns from GPs, consultants, insurance companies, and marketing channels
+- **Waiting Times**: Monitor lead times by service type, location, and clinician
+- **Procedure Trends**: Identify seasonal patterns and high-demand services
+- **Profitability Analysis**: Gross margin analysis by procedure type with cost breakdowns
+
+### Financial & Business
+- **Revenue Breakdown**: Analyze revenue by modality, clinician, and location
+- **Service Line Profitability**: Identify high-margin vs low-margin services
+- **Outstanding & Aging**: Monitor payment collection and aging receivables
+- **Cancellation Impact**: Track revenue impact from cancellations and no-shows
+
+### Marketing & Conversion
+- **Google Ads Performance**: ROI tracking by campaign and keyword
+- **Website Funnel Analysis**: Conversion tracking from visit to booking
+- **SEO & Organic Performance**: Monitor organic search performance
+- **Social & Email Campaigns**: Track campaign effectiveness
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React 18 with TypeScript
+- **UI Framework**: Tailwind CSS with shadcn/ui components
+- **State Management**: React Context API
+- **Data Fetching**: TanStack Query (React Query)
 - **Charts**: Recharts
-- **Animation**: Framer Motion
-- **Testing**: Vitest, React Testing Library
-- **Linting**: ESLint, Prettier
+- **Build Tool**: Vite
+- **Authentication**: Mock auth (ready for Zoho OAuth integration)
 
-## Environment Variables
+## 📋 Prerequisites
 
-Create a `.env` file in the root directory:
+- Node.js 18+ and npm
+- Git
 
-```env
-# Authentication credentials
-VITE_APP_USERNAME=admin@harleystreetultrasound.com
-VITE_APP_PASSWORD=HSU2024!Portal
+## 🔧 Installation
 
-# Application settings
-VITE_APP_NAME=Harley Street Ultrasound BI Portal
-VITE_APP_VERSION=1.0.0
+1. Clone the repository:
+```bash
+git clone https://github.com/jsonanalytix/harley-street-ultrasound-dashboard.git
+cd harley-street-ultrasound-dashboard
 ```
 
-## Installation
-
-1. Clone the repository
 2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Copy environment variables:
-   ```bash
-   cp .env.example .env
-   ```
+```bash
+npm install
+```
 
-## Available Scripts
+3. Create environment file:
+```bash
+cp .env.example .env
+```
+
+4. Update `.env` with your configuration (currently using mock data)
+
+## 🚀 Development
+
+Start the development server:
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+### Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
-- `npm test` - Run tests
-- `npm run storybook` - Start Storybook development server
+- `npm run type-check` - Run TypeScript type checking
 
-## Project Structure
+## 🔐 Authentication
+
+Currently using mock authentication. Login with:
+- **Email**: admin@harleystreetultrasound.com
+- **Password**: demo123
+
+## 📊 Mock Data
+
+The application currently uses comprehensive mock data that simulates:
+- Real clinic operations (closed Sundays, reduced Saturday hours)
+- Actual service offerings from Harley Street Ultrasound
+- Realistic referral patterns and seasonal trends
+- Accurate cost structures for profitability analysis
+
+## 🏗️ Project Structure
 
 ```
 src/
 ├── components/          # Reusable UI components
-│   ├── layout/         # Layout components (TopNav, SideNav, etc.)
+│   ├── layout/         # Layout components (navigation, wrapper)
 │   └── ui/             # shadcn/ui components
-├── contexts/           # React context providers
-├── lib/               # Utility functions and configurations
-├── mockData/          # Mock data generators
-├── pages/             # Page components organized by section
-└── hooks/             # Custom React hooks
+├── contexts/           # React contexts (auth, date range)
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions and helpers
+├── mockData/           # Mock data generators
+├── pages/              # Page components
+│   ├── clinical/       # Clinical dashboard pages
+│   └── financial/      # Financial dashboard pages
+└── App.tsx            # Main application component
 ```
 
-## Navigation Structure
+## 🔄 Data Integration
 
-### 1. Clinical & Operations
-- **Patient Volume**: Scan volume trends, modality breakdown, new vs returning patients
-- **Referral Sources**: Top referrers, revenue by source, contact management
-- **Waiting Times**: Lead time analysis, same-day availability, heat maps
-- **Procedure Trends**: Volume vs revenue analysis, seasonal trends
+The dashboard is designed to integrate with:
+- **Zoho CRM**: Patient records, appointments, invoices
+- **Google Ads API**: Campaign performance data
+- **Google Analytics 4**: Website analytics
+- **Payment Systems**: Revenue and collection data
 
-### 2. Financial & Business
-- **Revenue Breakdown**: MTD/QTD/YTD revenue, insurance breakdown, export functionality
-- **Profitability**: Margin analysis, waterfall charts, procedure profitability
-- **Outstanding & Aging**: Aging buckets, collection rates, progress indicators
-- **Cancellation Impact**: Lost revenue analysis, cancellation reasons
+## 🚀 Deployment
 
-### 3. Marketing & Conversion
-- **Google Ads**: Keyword performance, ROAS analysis, campaign management
-- **Website Funnel**: Conversion funnel analysis, Sankey diagrams
-- **SEO & Organic**: Query performance, landing page analytics
-- **Social & Email**: Engagement metrics, subject line optimization
+Build for production:
+```bash
+npm run build
+```
 
-### 4. Patient Experience & Quality
-- **Feedback & NPS**: NPS scoring, satisfaction analysis, word clouds
-- **Complaints & Incidents**: Incident tracking, SLA management, timelines
+The build output will be in the `dist` directory, ready for deployment to any static hosting service.
 
-### 5. Strategic & Capacity
-- **Utilization Forecast**: Capacity planning, ARIMA forecasting
-- **Competitor Benchmark**: Market positioning, share-of-voice analysis
-- **Patient Heatmap**: Geographic distribution, postcode analysis
+## 📈 Future Enhancements
 
-## Authentication
+- [ ] Real-time data integration with Zoho CRM
+- [ ] Advanced predictive analytics
+- [ ] Mobile responsive improvements
+- [ ] Export functionality for all reports
+- [ ] Role-based access control
+- [ ] Email report scheduling
+- [ ] Custom dashboard builder
 
-The application uses a simple authentication system with hard-coded credentials:
+## 🤝 Contributing
 
-- **Username**: `admin@harleystreetultrasound.com`
-- **Password**: `HSU2024!Portal`
+This is a private repository for Harley Street Ultrasound. For any questions or issues, please contact the development team.
 
-Upon successful login, a JWT-like token is stored in localStorage, and all routes are protected with a PrivateRoute wrapper.
+## 📄 License
 
-## Data Layer
+Proprietary - All rights reserved by Harley Street Ultrasound
 
-All data is generated using realistic mock data with the following characteristics:
+---
 
-- **50,000+ patients** with realistic NHS postcodes
-- **120,000+ appointments** spanning 18 months
-- **750+ clinicians and referrers** with contact information
-- **Seasonal patterns** and weekend/weekday variations
-- **500ms simulated API latency** for realistic loading states
-
-## Deployment
-
-### Vercel (Recommended)
-
-1. Install Vercel CLI:
-   ```bash
-   npm i -g vercel
-   ```
-
-2. Deploy:
-   ```bash
-   vercel
-   ```
-
-3. Set environment variables in Vercel dashboard
-
-### Manual Build
-
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-
-2. Serve the `dist` folder using any static hosting service
-
-## Development Guidelines
-
-### Code Quality
-- ESLint with Airbnb configuration
-- Prettier for code formatting
-- Husky pre-commit hooks for linting and type checking
-- 100% TypeScript coverage
-
-### Testing
-- Unit tests with Vitest
-- Component tests with React Testing Library
-- Storybook for component documentation
-
-### Accessibility
-- WCAG AA compliant color contrasts
-- Proper ARIA labels and keyboard navigation
-- Screen reader support
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
-
-This project is proprietary and confidential to Harley Street Ultrasound.
-
-## Support
-
-For technical support, contact the development team or refer to the project documentation.
+Built with ❤️ by [JSON Analytix](https://github.com/jsonanalytix)

@@ -31,7 +31,7 @@ import {
   cancellationKPIs,
   topCancellationReasons,
 } from '@/mockData/cancellationImpact';
-import { DollarSign, TrendingDown, Clock, Users, AlertTriangle } from 'lucide-react';
+import { DollarSign, PoundSterling, TrendingDown, Clock, Users, AlertTriangle } from 'lucide-react';
 
 const COLORS = ['#EF4444', '#F59E0B', '#10B981', '#3B82F6', '#8B5CF6', '#EC4899', '#14B8A6'];
 
@@ -77,7 +77,7 @@ export const CancellationImpact: React.FC = () => {
           value={`£${cancellationKPIs.totalLostRevenue.toLocaleString()}`}
           change={-12.5}
           changeLabel="vs previous period"
-          icon={<DollarSign className="h-4 w-4" />}
+          icon={<PoundSterling className="h-4 w-4" />}
         />
         <KPICard
           title="Cancellation Rate"

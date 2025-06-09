@@ -25,7 +25,7 @@ import {
   profitabilityKPIs,
   costBreakdownByCategory,
 } from '@/mockData/profitability';
-import { DollarSign, TrendingUp, TrendingDown } from 'lucide-react';
+import { DollarSign, TrendingUp, TrendingDown, PoundSterling } from 'lucide-react';
 
 const COLORS = ['#005EB8', '#38B6FF', '#F97316', '#14B8A6', '#8B5CF6', '#EC4899', '#10B981'];
 
@@ -137,7 +137,7 @@ export const Profitability: React.FC = () => {
           value={`${kpis.overallGrossMarginPercentage.toFixed(1)}%`}
           change={kpis.averageMarginChange}
           changeLabel="vs last month"
-          icon={<DollarSign className="h-4 w-4" />}
+          icon={<PoundSterling className="h-4 w-4" />}
         />
         <KPICard
           title="Total Gross Profit"

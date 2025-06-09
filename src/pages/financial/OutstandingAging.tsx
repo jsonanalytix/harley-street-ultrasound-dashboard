@@ -27,7 +27,7 @@ import {
   outstandingAgingKPIs,
   highRiskAccounts,
 } from '@/mockData/outstandingAging';
-import { DollarSign, Clock, AlertTriangle, Phone, Search } from 'lucide-react';
+import { DollarSign, PoundSterling, Clock, AlertTriangle, Phone, Search } from 'lucide-react';
 import { format } from 'date-fns';
 
 const COLORS = ['#10B981', '#F59E0B', '#EF4444', '#DC2626', '#991B1B'];
@@ -93,7 +93,7 @@ export const OutstandingAging: React.FC = () => {
           value={`£${outstandingAgingKPIs.totalOutstanding.toLocaleString()}`}
           change={-5.2}
           changeLabel="vs last month"
-          icon={<DollarSign className="h-4 w-4" />}
+          icon={<PoundSterling className="h-4 w-4" />}
         />
         <KPICard
           title="Overdue Amount"

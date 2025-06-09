@@ -21,7 +21,7 @@ import {
   generateSeasonalData,
   procedureTrendsKPIs,
 } from '@/mockData/procedureTrends';
-import { TrendingUp, DollarSign, Activity, Zap } from 'lucide-react';
+import { TrendingUp, DollarSign, PoundSterling, Activity, Zap } from 'lucide-react';
 
 const COLORS = ['#005EB8', '#38B6FF', '#F97316', '#14B8A6', '#8B5CF6', '#EC4899', '#10B981'];
 
@@ -80,7 +80,7 @@ export const ProcedureTrends: React.FC = () => {
           value={`£${(procedureTrendsKPIs.totalRevenue / 1000).toFixed(0)}k`}
           change={procedureTrendsKPIs.revenueChange}
           changeLabel="vs last month"
-          icon={<DollarSign className="h-4 w-4" />}
+          icon={<PoundSterling className="h-4 w-4" />}
         />
         <KPICard
           title="Top Category"

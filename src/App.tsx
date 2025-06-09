@@ -15,6 +15,15 @@ import { RevenueBreakdown } from '@/pages/financial/RevenueBreakdown';
 import { Profitability } from '@/pages/financial/Profitability';
 import { OutstandingAging } from '@/pages/financial/OutstandingAging';
 import { CancellationImpact } from '@/pages/financial/CancellationImpact';
+import { GoogleAdsPerformance } from '@/pages/marketing/GoogleAdsPerformance';
+import { WebsiteFunnel } from '@/pages/marketing/WebsiteFunnel';
+import { SEOOrganic } from '@/pages/marketing/SEOOrganic';
+import { SocialEmail } from '@/pages/marketing/SocialEmail';
+import { FeedbackNPS } from '@/pages/patient-experience/FeedbackNPS';
+import { ComplaintsIncidents } from '@/pages/patient-experience/ComplaintsIncidents';
+import { UtilizationForecast } from '@/pages/strategic/UtilizationForecast';
+import { CompetitorBenchmark } from '@/pages/strategic/CompetitorBenchmark';
+import { PatientHeatmap } from '@/pages/strategic/PatientHeatmap';
 import './index.css';
 
 const queryClient = new QueryClient({
@@ -57,19 +66,19 @@ function App() {
                     <Route path="cancellation-impact" element={<CancellationImpact />} />
                   </Route>
                   <Route path="marketing">
-                    <Route path="google-ads" element={<div>Google Ads - Coming Soon</div>} />
-                    <Route path="website-funnel" element={<div>Website Funnel - Coming Soon</div>} />
-                    <Route path="seo-organic" element={<div>SEO & Organic - Coming Soon</div>} />
-                    <Route path="social-email" element={<div>Social & Email - Coming Soon</div>} />
+                    <Route path="google-ads" element={<GoogleAdsPerformance />} />
+                    <Route path="website-funnel" element={<WebsiteFunnel />} />
+                    <Route path="seo-organic" element={<SEOOrganic />} />
+                    <Route path="social-email" element={<SocialEmail />} />
                   </Route>
                   <Route path="patient-experience">
-                    <Route path="feedback-nps" element={<div>Feedback & NPS - Coming Soon</div>} />
-                    <Route path="complaints-incidents" element={<div>Complaints & Incidents - Coming Soon</div>} />
+                    <Route path="feedback-nps" element={<FeedbackNPS />} />
+                    <Route path="complaints-incidents" element={<ComplaintsIncidents />} />
                   </Route>
                   <Route path="strategic">
-                    <Route path="utilization-forecast" element={<div>Utilization Forecast - Coming Soon</div>} />
-                    <Route path="competitor-benchmark" element={<div>Competitor Benchmark - Coming Soon</div>} />
-                    <Route path="patient-heatmap" element={<div>Patient Heatmap - Coming Soon</div>} />
+                    <Route path="utilization-forecast" element={<UtilizationForecast />} />
+                    <Route path="competitor-benchmark" element={<CompetitorBenchmark />} />
+                    <Route path="patient-heatmap" element={<PatientHeatmap />} />
                   </Route>
                 </Route>
               </Routes>

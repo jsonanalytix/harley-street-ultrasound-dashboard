@@ -24,7 +24,7 @@ import {
   referralKPIs,
   referralRevenueBySource,
 } from '@/mockData/referralSources';
-import { Building2, DollarSign, TrendingUp, Users } from 'lucide-react';
+import { Building2, DollarSign, PoundSterling, TrendingUp, Users } from 'lucide-react';
 
 const COLORS = ['#005EB8', '#38B6FF', '#F97316', '#14B8A6', '#8B5CF6', '#EC4899', '#10B981', '#F59E0B'];
 
@@ -78,7 +78,7 @@ export const ReferralSources: React.FC = () => {
           value={`£${(referralKPIs.totalRevenue / 1000).toFixed(0)}k`}
           change={referralKPIs.revenueChange}
           changeLabel="vs last month"
-          icon={<DollarSign className="h-4 w-4" />}
+          icon={<PoundSterling className="h-4 w-4" />}
         />
         <KPICard
           title="Average Order Value"

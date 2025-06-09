@@ -28,7 +28,7 @@ import {
   revenueByDayOfWeek,
   revenueKPIs,
 } from '@/mockData/revenueBreakdown';
-import { DollarSign, TrendingUp, Activity, MapPin } from 'lucide-react';
+import { DollarSign, PoundSterling, TrendingUp, Activity, MapPin } from 'lucide-react';
 
 const COLORS = ['#005EB8', '#38B6FF', '#F97316', '#14B8A6', '#8B5CF6', '#EC4899'];
 
@@ -57,7 +57,7 @@ export const RevenueBreakdown: React.FC = () => {
           value={formatCurrency(revenueKPIs.totalRevenue)}
           change={revenueKPIs.monthlyGrowth}
           changeLabel="vs last month"
-          icon={<DollarSign className="h-4 w-4" />}
+          icon={<PoundSterling className="h-4 w-4" />}
         />
         <KPICard
           title="Avg Revenue/Scan"

@@ -26,6 +26,11 @@ export const ChartContainer: React.FC<ChartContainerProps> = ({
 }) => {
   const [isExporting, setIsExporting] = useState(false);
 
+  // Extract height classes from className
+  const heightMatch = className?.match(/h-\d+|h-\[[\d\w]+\]/);
+  const heightClass = heightMatch ? heightMatch[0] : 'h-80'; // Default height
+  const otherClasses = className?.replace(/h-\d+|h-\[[\d\w]+\]/g, '').trim();
+
   const exportAsPNG = async () => {
     setIsExporting(true);
     try {
@@ -45,7 +50,7 @@ export const ChartContainer: React.FC<ChartContainerProps> = ({
   };
 
   return (
-    <Card className={cn('hover:shadow-lg transition-shadow', className)}>
+    <Card className={cn('hover:shadow-lg transition-shadow', otherClasses)}>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <div className="space-y-1">
           <CardTitle className="text-lg font-semibold text-[#1A1A1A] dark:text-white">
@@ -74,7 +79,7 @@ export const ChartContainer: React.FC<ChartContainerProps> = ({
         </DropdownMenu>
       </CardHeader>
       <CardContent>
-        <div id={`chart-${title.replace(/\s+/g, '-').toLowerCase()}`}>
+        <div id={`chart-${title.replace(/\s+/g, '-').toLowerCase()}`} className={heightClass}>
           {children}
         </div>
       </CardContent>

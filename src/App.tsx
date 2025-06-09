@@ -13,6 +13,7 @@ import { WaitingTimes } from '@/pages/clinical/WaitingTimes';
 import { ProcedureTrends } from '@/pages/clinical/ProcedureTrends';
 import { RevenueBreakdown } from '@/pages/financial/RevenueBreakdown';
 import { Profitability } from '@/pages/financial/Profitability';
+import { OutstandingAging } from '@/pages/financial/OutstandingAging';
 import './index.css';
 
 const queryClient = new QueryClient({
@@ -51,7 +52,7 @@ function App() {
                   <Route path="financial">
                     <Route path="revenue-breakdown" element={<RevenueBreakdown />} />
                     <Route path="profitability" element={<Profitability />} />
-                    <Route path="outstanding-aging" element={<div>Outstanding & Aging - Coming Soon</div>} />
+                    <Route path="outstanding-aging" element={<OutstandingAging />} />
                     <Route path="cancellation-impact" element={<div>Cancellation Impact - Coming Soon</div>} />
                   </Route>
                   <Route path="marketing">

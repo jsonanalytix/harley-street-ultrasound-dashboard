@@ -14,6 +14,7 @@ import { ProcedureTrends } from '@/pages/clinical/ProcedureTrends';
 import { RevenueBreakdown } from '@/pages/financial/RevenueBreakdown';
 import { Profitability } from '@/pages/financial/Profitability';
 import { OutstandingAging } from '@/pages/financial/OutstandingAging';
+import { CancellationImpact } from '@/pages/financial/CancellationImpact';
 import './index.css';
 
 const queryClient = new QueryClient({
@@ -53,7 +54,7 @@ function App() {
                     <Route path="revenue-breakdown" element={<RevenueBreakdown />} />
                     <Route path="profitability" element={<Profitability />} />
                     <Route path="outstanding-aging" element={<OutstandingAging />} />
-                    <Route path="cancellation-impact" element={<div>Cancellation Impact - Coming Soon</div>} />
+                    <Route path="cancellation-impact" element={<CancellationImpact />} />
                   </Route>
                   <Route path="marketing">
                     <Route path="google-ads" element={<div>Google Ads - Coming Soon</div>} />

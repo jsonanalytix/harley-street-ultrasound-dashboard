@@ -16,8 +16,9 @@ export const authService = {
   login: (email: string, password: string): Promise<{ user: User; token: string }> => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const validUsername = import.meta.env.VITE_APP_USERNAME;
-        const validPassword = import.meta.env.VITE_APP_PASSWORD;
+        // Use hardcoded demo credentials for the deployed version
+        const validUsername = 'admin@harleystreetultrasound.com';
+        const validPassword = 'HSU2024!Portal';
 
         if (email === validUsername && password === validPassword) {
           const user: User = {

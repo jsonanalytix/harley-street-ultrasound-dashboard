@@ -22,7 +22,7 @@ export const authService = {
         if (email === validUsername && password === validPassword) {
           const user: User = {
             email,
-            name: 'Dr. Sarah Collins',
+            name: 'Dr. Ayman Mahfouz',
             avatar: 'https://images.pexels.com/photos/5327921/pexels-photo-5327921.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=2'
           };
           
